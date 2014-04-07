@@ -15,13 +15,16 @@ class AsynchronousFileReader(threading.Thread):
     be consumed in another thread.
     """
 
-    def __init__(self, fd, queue=None):
+    def __init__(self, fd, queue=None, autostart=False):
         self._fd = fd
         if queue is None:
             queue = Queue()
         self.queue = queue
 
         threading.Thread.__init__(self)
+
+        if autostart:
+            self.start()
 
     def run(self):
         """

@@ -16,10 +16,8 @@ def consume(command):
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     # Launch the asynchronous readers of the process' stdout and stderr.
-    stdout = AsynchronousFileReader(process.stdout)
-    stdout.start()
-    stderr = AsynchronousFileReader(process.stderr)
-    stderr.start()
+    stdout = AsynchronousFileReader(process.stdout, autostart=True)
+    stderr = AsynchronousFileReader(process.stderr, autostart=True)
 
     # Check the readers if we received some output (until there is nothing more to get).
     while not stdout.eof() or not stderr.eof():
