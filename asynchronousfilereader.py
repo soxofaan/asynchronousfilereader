@@ -1,4 +1,6 @@
 
+__version__ = '0.1.0'
+
 import threading
 try:
     # Python 2
