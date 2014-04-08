@@ -1,5 +1,5 @@
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 
 import threading
 try:
@@ -17,7 +17,7 @@ class AsynchronousFileReader(threading.Thread):
     be consumed in another thread.
     """
 
-    def __init__(self, fd, queue=None, autostart=False):
+    def __init__(self, fd, queue=None, autostart=True):
         self._fd = fd
         if queue is None:
             queue = Queue()
