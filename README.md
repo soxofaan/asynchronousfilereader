@@ -40,8 +40,10 @@ reader = AsynchronousFileReader(file)
 while not reader.eof():
     for line in reader.readlines():
         # Do something with `line` here
+        store(line)
 
-    # Do something else here while waiting for more input.
+    # Do something else in the meantime while waiting for more input.
+    other_time_consuming_stuff()
 
 # Be tidy and join the thread.
 reader.join()
