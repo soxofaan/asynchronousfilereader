@@ -1,3 +1,14 @@
+"""
+AsynchronousFileReader
+======================
+
+Simple thread based asynchronous file reader for Python.
+
+see https://github.com/soxofaan/asynchronousfilereader
+
+MIT License
+Copyright (c) 2014 Stefaan Lippens
+"""
 
 __version__ = '0.2.1'
 

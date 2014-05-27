@@ -1,6 +1,6 @@
 
-AsyncFileReader
-===============
+AsynchronousFileReader
+======================
 
 Simple thread based asynchronous file reader for Python.
 
